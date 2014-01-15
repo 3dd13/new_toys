@@ -1,0 +1,27 @@
+<div id="toys_list" >
+  <h1>Listing toys</h1>
+
+  <table>
+    <% @toys.each do |toy| %>
+      <tr class=" <%= cycle('list_line_odd' , 'list_line_even' ) %>" >
+        <td>
+         <%= image_tag(toy.image_url, :class => 'list_image' ) %>
+        </td>
+        <td class="list_description" >
+          <dl>
+            <dt><%= toy.title %></dt>
+            <dd><%= truncate(strip_tags(toy.description), :length => 80) %></dd>
+          </dl>
+        </td>
+        <td class="list_actions" >
+          <%= link_to 'Show' , toy %><br/>
+          <%= link_to 'Edit' , edit_toy_path(toy) %><br/>
+          <%= link_to 'Destroy' , toy, :confirm => 'Are you sure?' , :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<br />
+<%= link_to 'New toy' , new_toy_path %>

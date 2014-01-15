@@ -1,0 +1,18 @@
+<% if notice %>
+<p id="notice>"<%= notice %></p>
+<% end %>
+
+<h1>Your Toys4U Catalog</h1>
+
+<% @toys.each do |toy| %>
+	<div class="entry">
+		<%= image_tag(toy.image_url) %>
+		<h3><%= toy.title %></h3>
+
+		<%= sanitize(toy.description) %>
+		<div class="price-line">
+			<span class="price"><%= number_to_currency(toy.price) %></span>
+		<%= button_to 'Add to Cart', line_items_path(:toy_id => toy), :remote=> true %>		
+		</div>
+	</div>
+<% end %>
