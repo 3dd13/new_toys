@@ -3,13 +3,13 @@
 <head>
   <title>Toys4U</title>
   <%= stylesheet_link_tag "scaffold" %>
-  <%= stylesheet_link_tag "depot", :media => "all" %>
+  <%= stylesheet_link_tag "toys4u", :media => "all" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body id="store">
   <div id="banner">
-    <%= image_tag("logo.png") %>
+<!--     <%= image_tag("logo.png") %> -->
     <%= @page_title || "Toys4U" %>
   </div>
   <div id="columns">
@@ -19,12 +19,14 @@
           <%= render @cart %>
         <% end %>
       <% end %>
-
-
+      
+      <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+<!-- 
       <a href="http://www....">Home</a><br />
       <a href="http://www..../faq">Questions</a><br />
       <a href="http://www..../news">News</a><br />
-      <a href="http://www..../contact">Contact</a><br />
+      <a href="http://www..../contact">Contact</a><br /> -->
     </div>
     <div id="main">
       <%= yield %>

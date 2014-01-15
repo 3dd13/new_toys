@@ -1,6 +1,7 @@
 class ToysController < ApplicationController
   before_action :set_toy, only: [:show, :edit, :update, :destroy]
-
+    before_filter :authenticate_admin!
+    
   # GET /toys
   # GET /toys.json
   def index

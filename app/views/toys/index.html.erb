@@ -5,7 +5,7 @@
     <% @toys.each do |toy| %>
       <tr class=" <%= cycle('list_line_odd' , 'list_line_even' ) %>" >
         <td>
-         <%= image_tag(toy.image_url, :class => 'list_image' ) %>
+         <%= image_tag(toy.image_url, :class => 'list_image', :width => 300 ) %>
         </td>
         <td class="list_description" >
           <dl>

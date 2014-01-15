@@ -6,7 +6,7 @@
 
 <% @toys.each do |toy| %>
 	<div class="entry">
-		<%= image_tag(toy.image_url) %>
+		<%= image_tag(toy.image_url, :width => 300 ) %>
 		<h3><%= toy.title %></h3>
 
 		<%= sanitize(toy.description) %>
